@@ -1,39 +1,45 @@
+import { Link, Route, Routes } from "react-router-dom";
 
 
 export default function AdminPage(){
 
     return(
 
-    <>
-  
 
-    <div className=" w-full h-screen bg-red-600 flex flex-col items-center" >
+    <div className=" w-full h-screen bg-red-600  ">
+        <div>
+            <Link className="mr-[20px]" to={"/admin/rooms"}> Rooms</Link>
+            <Link to={"/admin/bookings"}> Bookings</Link>
 
-    <div className=" w-[50px] h-[50px] border border-white
-     bg-white w-[700px] h-[100px] rounded-lg justify-center flex items-center  "  > 
+        </div>
 
-
-    <input type="date" />
-    <input type="date" />
-
-    <select>
-      <option >Luxury</option>
-      <option >Standed</option>
-      <option >Deluxe</option>
-    
-
-    </select>
-    <button>Book Now</button>
-       </div>
-
-       <h1 className="text-white text-[50px] ">
         
-        Welcome to the Leonine Villa </h1>
+        <Routes path="/*">
 
-    </div>
+                <Route path="/rooms" element={
+                        <div>
+                            <h1> Rooms</h1>
+                        </div>
+                }/>
+
+                    <Route path="/bookings" element={
+                        <div>
+                            <h1> Bookings</h1>
+                        </div>
+                }/>
+
+
+                
+
+         </Routes>
+         
+         </div>
+      
+
+
+
     
     
-    </>
 
     )
 
