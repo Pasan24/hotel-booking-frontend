@@ -10,20 +10,13 @@ function App() {
 
   return (
    <BrowserRouter>
-      <Routes path="/"  >
+      <Routes path="/*"  >
 
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/*" element={<HomePage/>} />
         
         <Route path="/admin/*" element= {<AdminPage/>} />
 
-        <Route path="/*" element={ 
-          
-        <div className=" w-full h-[100vh] bg-red-700 text-white "  >
-
-         404 Not Found 
-        
-        </div> 
-      }/>
+      
    
    
       </Routes>
