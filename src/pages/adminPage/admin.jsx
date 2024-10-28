@@ -8,10 +8,16 @@ import {
   AiOutlineComment,
   AiOutlinePicture,
 } from "react-icons/ai";
+import AdminBooking from "../admin/Bookings/adminBooking.jsx";
+import AdminCategories from "../admin/categories/adminCategories.jsx";
+import Rooms from "../admin/rooms/rooms.jsx";
+import Users from "../admin/users/users.jsx";
+import AdminFeedback from "../admin/feedback/feedback.jsx";
+import GalleryItems from "../admin/galleryItems/galleryItem.jsx";
 
 export default function AdminPage() {
   return (
-    <div className="w-full max-h-[100vh] overflow-hidden flex">
+    <div className="w-full max-h-[100vh]  flex">
       {/* Sidebar */}
       <div className="w-[20%] bg-red-500 h-[100vh] flex flex-col p-4 space-y-4">
         
@@ -48,16 +54,18 @@ export default function AdminPage() {
 
       {/* Main content area */}
       <div className="w-[80%] max-h-[100vh] bg-blue-600 overflow-y-scroll   ">
-       
-        <Routes path="/">
-          <Route path="/bookings" element={<h1> Bookings</h1>} />
-          <Route path="/categories" element={<h1>Categories</h1>} />
-          <Route path="/rooms" element={<h1>Rooms</h1>} />
-          <Route path="/users" element={<h1>Users</h1>} />
-          <Route path="/feedbacks" element={<h1>Feedbacks</h1>} />
-          <Route path="/gallery" element={<h1>Gallery Items</h1>} />
+
+            
+      <Routes path="/*">
+          <Route path="/bookings" element={<AdminBooking/>} />
+          <Route path="/categories" element={< AdminCategories/> } />
+          <Route path="/rooms" element={<Rooms/>} />
+          <Route path="/users" element={<Users/>} />
+          <Route path="/feedbacks" element={<AdminFeedback/>} />
+          <Route path="/gallery" element={<GalleryItems/>} />
         </Routes>
     
+   
       </div>
     </div>
   );
