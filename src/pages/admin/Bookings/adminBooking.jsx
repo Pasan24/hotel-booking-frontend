@@ -57,10 +57,10 @@ export default function AdminBooking() {
                 <tbody>
                     {
                         bookings.map(
-                            (booking)=>{
+                            (booking , index)=>{
 
                                 return(
-                                <tr>
+                                <tr key={index}>
                                     <td>
                                         {booking.bookingId}
                                     </td>
