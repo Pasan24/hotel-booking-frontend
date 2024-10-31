@@ -1,0 +1,10 @@
+.pic-bg{
+
+    background-image: url(/S.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
+
+}
