@@ -3,6 +3,7 @@ import "./login.css";
 import axios from "axios";
 
 export default function LoginPage() {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,13 +15,19 @@ export default function LoginPage() {
         password: password,
 
       })
-      
+
       .then((res) => {
         console.log(res.data)
         localStorage.setItem("token",res.data.token)
+        
 
-        const token = localStorage.getItem("token")
-        coonsole.log(token)
+       if(res.data.user.type=="customer"){
+        window.location.href = " / "
+
+       }else if(res.data.user.type=="admin") {
+         window.location.href = " /admin "
+
+       }
 
       })
       .catch((err) => {
