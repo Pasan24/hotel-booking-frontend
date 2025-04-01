@@ -4,6 +4,8 @@ import HomePage from "./pages/client-page/homePage.jsx"
 import AdminPage from "./pages/adminPage/admin.jsx"
 import TestComponent from "./components/test/test.jsx"
 import LoginPage from "./pages/login/login.jsx"
+import CategoriesPage from "./pages/client-page/categories.jsx"
+import { Toaster } from "react-hot-toast"
 
 
 
@@ -12,6 +14,8 @@ function App() {
 
   return (
    <BrowserRouter>
+
+   <Toaster position="top-right" reverseOrder={false} />
       <Routes path="/*"  >
 
         <Route path="/*" element={<HomePage/>} />
@@ -20,6 +24,9 @@ function App() {
 
         <Route path="/login" element= {<LoginPage/>} />
 
+        <Route path="/categories" element= {<CategoriesPage/>} />
+
+        <Route path="/test" element= {<TestComponent/>} />
       
    
    
